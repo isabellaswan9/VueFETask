@@ -15,43 +15,37 @@
 		  <h3>Part A: The Subject Building/Land</h3>
 	  </div>
 	  <hr>
-	  <a-radio-group v-model="value" @change="onChange">
-		  <a-radio v-for="site in sites" :value="site.value" :style="radioStyle">
-			  {{ site.text }}{{site.value}}
-		  </a-radio>
-	      <a-radio :style="radioStyle" :value="4">
-	        More...
-	        <a-input v-if="value === 4" :style="{ width: 100, marginLeft: 10 }" />
-	      </a-radio>
-	    </a-radio-group>
+		<quesList :sites="sites"></quesList>
+		<quesList :sites="queses"></quesList>
 	</div>
 </template>
 
 <script>
-	import hoting from '../components/hoting'
-		import comming from '../components/comming'
 		import tab from '../components/tab'
 		import subTab from '../components/subTab'
+		import quesList from '../components/quesList'
+		
 	export default {
 	  name: "movieDetail",
 	  //引入并注册组件
 	  components: {
-	      hoting,comming,tab,subTab
+		  tab,subTab,quesList
 	    },
 	  data() {
 	    return {
 		  showHot2:1,
-		  value:1,
-		  radioStyle: {
-		          display: 'block',
-		          height: '30px',
-		          lineHeight: '30px',
-		        },
-			sites:[
-				{text:'Google',value:1},
-				{ text: 'Runoob' ,value:2},
-				{ text: 'Taobao' ,value:3}
-			]
+		  sites:[
+		  	{text:'Residential',value:1},
+		  	{ text: 'Composite' ,value:2},
+		  	{ text: 'Industrial' ,value:3},
+			{ text: 'Retail' ,value:4},
+			{ text: 'Agricultural' ,value:5},
+		  ],
+		  queses:[
+		  	{text:'Google',value:1},
+		  	{ text: 'Runoob' ,value:2},
+		  	{ text: 'Taobao' ,value:3},
+		  ],
 	    };
 	  },
 	  methods: {
