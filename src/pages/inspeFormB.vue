@@ -16,6 +16,9 @@
 <script>
 	import loading from '../components/loading.vue'
 	
+	let pic = false;
+	let pic2 = true;
+	
 	export default{
 		name:'inspeFormB',
 		components:{
@@ -25,21 +28,27 @@
 			return {
 				isClickable: false,
 				position:-1,
-				spinning: false,
-				isReady: true,
+				spinning: pic,
+				isReady: pic2,
 				change: function(){
-					alert(this.spinning);}
+					setTimeout(function(){
+						//alert('等待中');
+						Console.log('等待中');
+					},1000);
+					}
 			}
 		},
 		methods: {
 			formSubmit(){
+				//alert(this);
+				var vm = this;
 				this.spinning=true;
 				this.isReady=false;
-				setTimeout(()=>{
-					this.spinning=false;
-					this.isReady=true;
-					alert(this.spinning);}
-				,1000);
+				setTimeout(function(){	
+					//alert(vm);
+					vm.spinning=false;
+					vm.isReady=true;
+					},1000)
 			}
 		}
 	};
