@@ -8,7 +8,7 @@
 		        <p>Job Report - Part A</p>
 		      </a-col>
 		      <a-col >
-		        <a-button ><a-icon type="share-alt" /></a-button>
+		        <a-button :disabled='isClickable'><a-icon type="share-alt" /></a-button>
 		      </a-col>
 		    </a-row>
 	</div>
@@ -17,6 +17,11 @@
 <script>
 	export default {
 		name: 'tab',
+		props: ["isClickable"],
+		data(){
+			return {
+			}
+		}
 	}
 </script>
 
