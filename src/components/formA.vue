@@ -1,6 +1,7 @@
 <template>
 	<div class="myForm">
 		  <a-form :form="form" @submit="handleSubmit">
+			  <fieldset :disabled="edit">
 			<quesList :sites="queses1"></quesList>
 			<quesList :sites="queses2"></quesList>
 			<quesList :sites="queses3"></quesList>
@@ -8,11 +9,11 @@
 			<div>
 				<h5>3. Composition</h5>
 				<div>
-					<input class="smallInput" />- storey
-					<input class="middleInput" />purposes
+					<input class="smallInput"/>- storey
+					<input class="middleInput"/>purposes
 				</div>
 				<div>
-					<input class="smallInput" />- storey
+					<input class="smallInput"/>- storey
 					<input class="middleInput" />purposes
 				</div>
 			</div>
@@ -31,9 +32,10 @@
 				</div>
 			</div>
 			<div>
-				<button class="middleButton2" id="save" @click="changeToRead">Save Only</button>
-				<button class="middleButton" id="mark" @click="changeToRead">Mark as Completed</button>
+				<button class="middleButton2" id="save" @click="disableAll">{{butName}}</button>
+				<button class="middleButton" id="mark" @click='$router.push({name:"floorPlan"})'>Mark as Completed</button>
 			</div>
+			</fieldset>
 		</a-form>
 	</div>
 </template>
@@ -48,6 +50,8 @@
 		},
 		data(){
 			return {
+				edit: false,
+				butName: 'Save Only',
 				queses1:[
 								{text:'Residential',value:1,title:'1a. Type of Building/Land Use',},
 								{ text: 'Composite' ,value:2},
@@ -73,6 +77,12 @@
 				],
 			};
 		},
+		methods:{
+			disableAll () {
+						this.edit = true;
+						this.butName = 'Read Only';
+					},
+		}
 	}
 </script>
 

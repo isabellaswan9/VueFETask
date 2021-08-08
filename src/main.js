@@ -5,6 +5,11 @@ import router from './router'
 
 import { Button } from 'ant-design-vue';
 import { Col,Row,Layout,Icon,Radio,Input,Form,Divider,Steps } from 'ant-design-vue';
+
+//注册全局组件
+import tab from './components/tab'
+import subTab from './components/subTab'
+
 Vue.component(Button.name, Button);
 Vue.component(Col.name, Col);
 Vue.component(Row.name, Row);
@@ -16,6 +21,9 @@ Vue.use(Input);
 Vue.use(Form);
 Vue.use(Steps);
 Vue.component(Divider.name, Divider);
+
+Vue.component('tab',tab);
+Vue.component('subTab',subTab);
 /**
  * 其实就是：import router from './router/index.js'
  * 在使用webpack项目中，如果导入index.js，则可以省略

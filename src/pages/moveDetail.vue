@@ -23,15 +23,13 @@
 </template>
 
 <script>
-		import tab from '../components/tab'
-		import subTab from '../components/subTab'
 		import steps from '../components/steps.vue'
 		import formA from '../components/formA.vue'
 	export default {
 	  name: "movieDetail",
 	  //引入并注册组件
 	  components: {
-		  tab,subTab,steps,formA
+		 steps,formA
 	    },
 	  data() {
 	    return {

@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<h5>{{sites[0].title}}</h5>
-	<a-radio-group v-model="value" @change="onChange">
+	<a-radio-group v-model="value" @change="onChange" :disabled="edit">
 			  <a-radio v-for="site in sites" :key="site.value"  :value="site.value" :style="radioStyle">
 				  {{ site.text }}
 			  </a-radio>

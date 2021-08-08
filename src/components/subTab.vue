@@ -9,11 +9,26 @@
 <script>
 	export default {
 		name:'subTab',
+		props: ["showHot"],
 		data(){
-			return {showHot:1};
+			return {};
 		}
 	}
 </script>
 
 <style>
+	.topNav{
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: space-around;
+	  align-items: center;
+	}
+	.topNav li{
+	  padding: 8px;
+	  cursor: pointer;
+	}
+	.active{
+	  color: rgb(229, 72, 71);
+	  border-bottom: 2px solid rgb(229, 72, 71);
+	}
 </style>

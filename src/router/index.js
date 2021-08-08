@@ -4,6 +4,7 @@ import Router from 'vue-router'
 // 引入路由
 import index from '../pages/index'
 import moveDetail from '../pages/moveDetail'
+import floorPlan from '../pages/floorPlan'
 Vue.use(Router)
 
 export default new Router({
@@ -18,6 +19,11 @@ export default new Router({
 	   path:'/moveDetail',
 	   name: 'moveDetail',
 	   component: moveDetail
+   },
+   {
+   	   path:'/floorPlan',
+   	   name: 'floorPlan',
+   	   component: floorPlan
    }
  ]
 })
