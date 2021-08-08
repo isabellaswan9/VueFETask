@@ -8,7 +8,7 @@
 		        <p>Job Report - Part A</p>
 		      </a-col>
 		      <a-col >
-		        <a-button :disabled='isClickable'><a-icon type="share-alt" /></a-button>
+		        <a-button :disabled='isClickable' @click="toSubmit()"><a-icon type="share-alt" /></a-button>
 		      </a-col>
 		    </a-row>
 	</div>
@@ -20,6 +20,12 @@
 		props: ["isClickable"],
 		data(){
 			return {
+			}
+		},
+		methods:{
+			//通过$emit触发事件
+			toSubmit: function(){
+				this.$emit('parentSubmit')
 			}
 		}
 	}

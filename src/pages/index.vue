@@ -21,14 +21,13 @@
    
 <script>
 	import hoting from '../components/hoting'
-	import comming from '../components/comming'
 	let pic = { url : 'src/assets/login.png' }
 	
 export default {
   name: "index",
   //引入并注册组件
   components: {
-      hoting,comming
+      hoting
     },
   data() {
     return {

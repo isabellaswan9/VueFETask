@@ -4,7 +4,7 @@ import App from './App'
 import router from './router'
 
 import { Button } from 'ant-design-vue';
-import { Col,Row,Layout,Icon,Radio,Input,Form,Divider,Steps } from 'ant-design-vue';
+import { Col,Row,Layout,Icon,Radio,Input,Form,Divider,Steps,Spin } from 'ant-design-vue';
 
 //注册全局组件
 import tab from './components/tab'
@@ -21,6 +21,7 @@ Vue.use(Radio);
 Vue.use(Input);
 Vue.use(Form);
 Vue.use(Steps);
+Vue.use(Spin);
 Vue.component(Divider.name, Divider);
 
 Vue.component('tab',tab);
@@ -34,7 +35,13 @@ Vue.component('hoting',hoting);
 
 // 在生产环境下把注释全部去掉
 Vue.config.productionTip = false
-
+	Spin.setDefaultIndicator({
+	  indicator: {
+	    render() {
+	      return ;
+	    },
+	  },
+	});
 // 是否启动代码质量检查，不要删除
 /* eslint-disable no-new */
 new Vue({

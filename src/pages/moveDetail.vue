@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<tab :isClickable=true></tab>
+		<tab :isClickable='isClickable'></tab>
 		<subTab></subTab>
 	  <ul class="topNav">
 	    <li :class="[showHot2==1?'active':'']" @click="showHot2=1"><a-icon type="form" /></li>
@@ -33,6 +33,7 @@
 	    },
 	  data() {
 	    return {
+			isClickable: true,
 			isActive: true,
 		  showHot2:1,
 	    };

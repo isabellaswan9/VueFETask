@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<tab :isClickable=true></tab>
+		<tab :isClickable='isClickable'></tab>
 		<subTab :showHot='position'></subTab>
 		<div>
 			<h5>Job No.: 2020/20390/B0C</h5>
@@ -27,6 +27,7 @@
 		name:'floorPlan',
 		data(){
 			return {
+				isClickable: true,
 				position:0,
 				planName:[
 					{name1:'Floor Plan A'}
