@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<tab></tab>
+		<tab :isClickable=true></tab>
 		<subTab :showHot='position'></subTab>
 		<div>
 			<h5>Job No.: 2020/20390/B0C</h5>
@@ -10,7 +10,10 @@
 		<div>
 		    <img src="../assets/floorPlanA.jpg" height="auto" width="90%" alt="">
 			<div>{{planName[0].name1}}</div>
-			<hoting></hoting>
+			<a-button 
+			class="buttoncolor" 
+			block :size="size" 
+			@click="$router.push({name:'inspeFormB',query:{planName:planName[0].name1}})">Mark Inspection Spot</a-button>
 		</div>
 		
 		<div>
@@ -26,9 +29,11 @@
 			return {
 				position:0,
 				planName:[
-					{name1:'floor plan A'}
-				]
-					
+					{name1:'Floor Plan A'}
+				],
+				onClick:function(){
+					this.$router.push({name:"index"});
+				}
 				
 			}
 		}

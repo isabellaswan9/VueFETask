@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<tab></tab>
+		<tab :isClickable=true></tab>
 		<subTab></subTab>
 	  <ul class="topNav">
 	    <li :class="[showHot2==1?'active':'']" @click="showHot2=1"><a-icon type="form" /></li>

@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import index from '../pages/index'
 import moveDetail from '../pages/moveDetail'
 import floorPlan from '../pages/floorPlan'
+import inspeFormB from '../pages/inspeFormB'
 Vue.use(Router)
 
 export default new Router({
@@ -24,6 +25,11 @@ export default new Router({
    	   path:'/floorPlan',
    	   name: 'floorPlan',
    	   component: floorPlan
-   }
+   },
+	 {
+	 	   path:'/inspeFormB',
+	 	   name: 'inspeFormB',
+	 	   component: inspeFormB
+	 }
  ]
 })
