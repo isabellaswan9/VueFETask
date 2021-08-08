@@ -4,15 +4,18 @@ import App from './App'
 import router from './router'
 
 import { Button } from 'ant-design-vue';
-import { Col,Row,Layout,Icon,Radio,Input } from 'ant-design-vue';
+import { Col,Row,Layout,Icon,Radio,Input,Form,Divider,Steps } from 'ant-design-vue';
 Vue.component(Button.name, Button);
 Vue.component(Col.name, Col);
 Vue.component(Row.name, Row);
 Vue.component(Layout.name, Layout);
 Vue.component(Icon.name, Icon);
-Vue.component(Radio.name, Radio);
+Vue.use(Radio);
 //Vue.component(RadioGroup.name, RadioGroup);
-Vue.component(Input.name, Input);
+Vue.use(Input);
+Vue.use(Form);
+Vue.use(Steps);
+Vue.component(Divider.name, Divider);
 /**
  * 其实就是：import router from './router/index.js'
  * 在使用webpack项目中，如果导入index.js，则可以省略

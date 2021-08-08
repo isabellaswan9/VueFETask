@@ -1,13 +1,15 @@
 <template>
+	<div>
+		<h5>{{sites[0].title}}</h5>
 	<a-radio-group v-model="value" @change="onChange">
 			  <a-radio v-for="site in sites" :key="site.value"  :value="site.value" :style="radioStyle">
 				  {{ site.text }}
 			  </a-radio>
-	    <a-radio :style="radioStyle" :value="6">
-	          Other...<a-input placeholder="Basic usage" />
-	        <a-input v-if="value === 6" :style="{ width: 100, marginLeft: 10 }" />
+	    <a-radio :style="radioStyle" :value="6">Other...
+		<a-input placeholder="Please state"/>
 	    </a-radio>
 	  </a-radio-group>
+	  </div>
 </template>
 
 <script>

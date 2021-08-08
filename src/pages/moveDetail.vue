@@ -14,38 +14,29 @@
 		  <h5>S9 Florissa Park Giffard Mansion</h5>
 		  <h3>Part A: The Subject Building/Land</h3>
 	  </div>
-	  <hr>
-		<quesList :sites="sites"></quesList>
-		<quesList :sites="queses"></quesList>
+	  <a-divider />
+	  <a-row type="flex" justify="space-between" align="top" class="main">
+		  <steps></steps>
+		  <formA></formA>
+	</a-row>
 	</div>
 </template>
 
 <script>
 		import tab from '../components/tab'
 		import subTab from '../components/subTab'
-		import quesList from '../components/quesList'
-		
+		import steps from '../components/steps.vue'
+		import formA from '../components/formA.vue'
 	export default {
 	  name: "movieDetail",
 	  //引入并注册组件
 	  components: {
-		  tab,subTab,quesList
+		  tab,subTab,steps,formA
 	    },
 	  data() {
 	    return {
+			isActive: true,
 		  showHot2:1,
-		  sites:[
-		  	{text:'Residential',value:1},
-		  	{ text: 'Composite' ,value:2},
-		  	{ text: 'Industrial' ,value:3},
-			{ text: 'Retail' ,value:4},
-			{ text: 'Agricultural' ,value:5},
-		  ],
-		  queses:[
-		  	{text:'Google',value:1},
-		  	{ text: 'Runoob' ,value:2},
-		  	{ text: 'Taobao' ,value:3},
-		  ],
 	    };
 	  },
 	  methods: {
@@ -75,4 +66,31 @@
 	.set-padding{
 		padding:10px;
 	}
+	.smallInput{
+		width:40px;
+		height: 40px;
+		margin: 8px;
+	}
+	.middleInput{
+		width:85px;
+		height: 40px;
+		margin: 10px;
+	}
+	.middleButton{
+		height:50px;
+		width: 40%;
+		margin: 10px;
+		border: none;
+		background-color: #fdde07;
+		color: #2c3500;
+	}
+	.middleButton2{
+		height:50px;
+		width: 40%;
+		margin: 10px;
+		border: none;
+		background-color: #252839;
+		color: #fafbff;
+	}
+
 </style>
