@@ -4,8 +4,8 @@
 		<loading v-if="!isReady"></loading>
 		<a-spin :spinning="spinning">
 			<!--向子组件传值isClickable，定义右上图标是否可点击-->
-		<tab :isClickable='isClickable' @parentSubmit="formSubmit"></tab>
-		<subTab :showHot='position'></subTab>
+			<tab :isClickable='isClickable' @parentSubmit="formSubmit" :lastLev='lastLev'></tab>
+			<subTab :showHot='position' :isClickable='subTabClick'></subTab>
 		<!--通过path和query获取参数，也可以利用params接收参数-->
 		<p>{{this.$route.query.planName}}</p>	
 		</a-spin>
@@ -16,8 +16,6 @@
 <script>
 	import loading from '../components/loading.vue'
 	
-	let pic = false;
-	let pic2 = true;
 	
 	export default{
 		name:'inspeFormB',
@@ -26,16 +24,12 @@
 		},
 		data(){
 			return {
+				lastLev: 'floorPlan',
+				subTabClick: [true,true,true],
 				isClickable: false,
 				position:-1,
-				spinning: pic,
-				isReady: pic2,
-				change: function(){
-					setTimeout(function(){
-						//alert('等待中');
-						Console.log('等待中');
-					},1000);
-					}
+				spinning: false,
+				isReady: true,
 			}
 		},
 		methods: {
@@ -48,7 +42,7 @@
 					//alert(vm);
 					vm.spinning=false;
 					vm.isReady=true;
-					},1000)
+					},3000)
 			}
 		}
 	};

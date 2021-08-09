@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<tab :isClickable='isClickable'></tab>
-		<subTab></subTab>
+		<tab :isClickable='isClickable' :lastLev='lastLev'></tab>
+		<subTab :showHot=1 :isClickable='subTabClick'></subTab>
 	  <ul class="topNav">
 	    <li :class="[showHot2==1?'active':'']" @click="showHot2=1"><a-icon type="form" /></li>
 	    <li :class="[showHot2==0?'active':'']" @click="showHot2=0"><a-icon type="camera" /></li>
@@ -33,6 +33,8 @@
 	    },
 	  data() {
 	    return {
+			subTabClick: [true,false,false],
+			lastLev: 'index',
 			isClickable: true,
 			isActive: true,
 		  showHot2:1,

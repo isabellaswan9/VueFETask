@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<tab :isClickable='isClickable'></tab>
-		<subTab :showHot='position'></subTab>
+		<tab :isClickable='isClickable' :lastLev='lastLev'></tab>
+		<subTab :showHot='position' :isClickable='subTabClick'></subTab>
 		<div>
 			<h5>Job No.: 2020/20390/B0C</h5>
 			<h5>Assigned Inspector: David Chow</h5>
@@ -27,6 +27,8 @@
 		name:'floorPlan',
 		data(){
 			return {
+				subTabClick: [true,true,false],
+				lastLev: 'moveDetail',
 				isClickable: true,
 				position:0,
 				planName:[

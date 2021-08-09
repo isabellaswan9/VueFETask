@@ -2,7 +2,7 @@
 	<div>
 		<a-row type="flex" justify="space-around">
 		      <a-col>
-		        <a-button @click='$router.push({name:"index"})'> <a-icon type="left" /></a-button>
+		        <a-button @click='$router.push({name:lastLev})'> <a-icon type="left" /></a-button>
 		      </a-col>
 		      <a-col >
 		        <p>Job Report - Part A</p>
@@ -17,9 +17,10 @@
 <script>
 	export default {
 		name: 'tab',
-		props: ["isClickable"],
+		props: ["isClickable","lastLev"],
 		data(){
 			return {
+				lastLev:"floorPlan"
 			}
 		},
 		methods:{
