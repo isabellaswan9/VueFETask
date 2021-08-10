@@ -11,6 +11,8 @@ import tab from './components/tab'
 import subTab from './components/subTab'
 import hoting from './components/hoting'
 
+//import "amfe-flexible"; 
+
 Vue.component(Button.name, Button);
 Vue.component(Col.name, Col);
 Vue.component(Row.name, Row);

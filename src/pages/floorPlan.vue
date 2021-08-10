@@ -44,4 +44,11 @@
 </script>
 
 <style>
+	.buttoncolor{
+		background-color: #fdde07;
+		margin: 10px;
+		width: 90%;
+		height: 1.5rem;
+		font-weight: 600;
+	}
 </style>

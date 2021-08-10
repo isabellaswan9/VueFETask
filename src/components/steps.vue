@@ -1,6 +1,6 @@
 <template>
 	<div class="steps">
-	<p>part A</p>
+	<div class="font4">Part A</div>
 	<div>
 		
 				  <div class="stepsItem">
@@ -48,8 +48,8 @@
 	.line{
 	      position: absolute;
 		  background: rgba(226, 226, 226, 1);
-		  left:6px;
-	      width: 2px;
+		  left:15px;
+	      width: 4px;
 		  height: 25px;
 	    }
 	.stepsItem{
@@ -58,5 +58,9 @@
 	}
 	.steps{
 		width: 15%;
+	}
+	.font4{
+		font-size: small;
+		opacity: 0.75;
 	}
 </style>

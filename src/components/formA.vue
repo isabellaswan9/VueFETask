@@ -20,7 +20,7 @@
 			<div>
 				<h5>4. Facilities Provided</h5>
 				<div>
-					<a-textarea placeholder="Basic usage" :rows="4" />
+					<a-textarea placeholder="Please state" :rows="4" />
 				</div>
 			</div>
 			<div>
@@ -31,11 +31,8 @@
 					<input class="smallInput" />Vehicle
 				</div>
 			</div>
-			<div>
-				<button class="middleButton2" id="save" @click="disableAll">{{butName}}</button>
-				<button class="middleButton" id="mark" @click='$router.push({name:"floorPlan"})'>Mark as Completed</button>
-			</div>
 			</fieldset>
+			
 		</a-form>
 	</div>
 </template>
@@ -89,5 +86,17 @@
 <style>
 	.myForm{
 		width: 85%;
+	}
+	.smallInput{
+		width:40px;
+		height: 40px;
+		margin: 8px;
+		border: 2px solid #d9d9d9;
+	}
+	.middleInput{
+		width:85px;
+		height: 40px;
+		margin: 10px;
+		border: 2px solid #d9d9d9;
 	}
 </style>

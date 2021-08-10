@@ -2,23 +2,27 @@
 	<div>
 		<tab :isClickable='isClickable' :lastLev='lastLev'></tab>
 		<subTab :showHot=1 :isClickable='subTabClick'></subTab>
-	  <ul class="topNav">
-	    <li :class="[showHot2==1?'active':'']" @click="showHot2=1"><a-icon type="form" /></li>
-	    <li :class="[showHot2==0?'active':'']" @click="showHot2=0"><a-icon type="camera" /></li>
-	  </ul>
-	  <div class="set-padding">
-		  <p>
-			Job No.: 2020/20390/BOC
-		  </p>
-		  <h6>Assigned Inspector: David Chow</h6>
-		  <h5>S9 Florissa Park Giffard Mansion</h5>
-		  <h3>Part A: The Subject Building/Land</h3>
+	  <div class="subNav">
+	    <li :class="[showHot2==1?'subActive':'']" @click="showHot2=1"><a-icon type="form" /></li>
+	    <li :class="[showHot2==0?'subActive':'']" @click="showHot2=0"><a-icon type="camera" /></li>
 	  </div>
-	  <a-divider />
-	  <a-row type="flex" justify="space-between" align="top" class="main">
+	  <div class="set-padding">
+		  <h6>
+			Job No.: 2020/20390/BOC
+		  </h6>
+		  <h6>Assigned Inspector: David Chow</h6>
+		  <div class="font2">S9 Florissa Park Giffard Mansion</div>
+		  <div class="font3">Part A: The Subject Building/Land</div>
+	  </div>
+	  <hr />
+	  <a-row type="flex" justify="space-between" align="top" class="main set-padding">
 		  <steps></steps>
-		  <formA></formA>
+		  <formA ref="mychild"></formA>
 	</a-row>
+	<div>
+		<button class="middleButton2" id="save" @click="disableAll">{{butName}}</button>
+		<button class="middleButton" id="mark" @click='$router.push({name:"floorPlan"})'>Mark as Completed</button>
+	</div>
 	</div>
 </template>
 
@@ -33,6 +37,7 @@
 	    },
 	  data() {
 	    return {
+			butName: 'Save Only',
 			subTabClick: [true,false,false],
 			lastLev: 'index',
 			isClickable: true,
@@ -45,41 +50,60 @@
 			  alert(e.target.value);
 	        console.log('radio checked', e.target.value);
 	      },
+		  disableAll () {
+			  //使用refs触发子组件方法，可传参
+		  			this.$refs.mychild.disableAll()
+		  		},
 		},
 	};
 </script>
 
 <style>
-	.topNav{
+	div{
+		border: 2px;
+	}
+	h5{
+		
+	}
+	.font2{
+		font-family:"agency fb";
+		font-size: 0.45rem;
+		font-weight: bold;
+	}
+	.font3{
+		font-family:"agency fb";
+		font-size: 0.5rem;
+		font-weight: bold;
+		margin-top: 0.3125rem ;
+	}
+	hr{
+		color: #ececec;
+		opacity: 0.25;
+	}
+	.subNav{
 	  display: flex;
 	  flex-direction: row;
 	  justify-content: space-around;
 	  align-items: center;
+	  background-color: #7a838a;
 	}
-	.topNav li{
-	  padding: 8px;
-	  cursor: pointer;
+	.subNav li{
+		padding: 8px;
+		cursor: pointer;
+		width: 50%;
+		text-align: center;
 	}
-	.active{
-	  color: rgb(229, 72, 71);
-	  border-bottom: 2px solid rgb(229, 72, 71);
+	.subActive{
+	  color: #FFFFFF;
+	  border-bottom:2px solid #fdde07;
 	}
 	.set-padding{
 		padding:10px;
 	}
-	.smallInput{
-		width:40px;
-		height: 40px;
-		margin: 8px;
-	}
-	.middleInput{
-		width:85px;
-		height: 40px;
-		margin: 10px;
-	}
+
 	.middleButton{
 		height:50px;
-		width: 40%;
+		width: 45%;
 		margin: 10px;
 		border: none;
 		background-color: #fdde07;
@@ -87,7 +111,7 @@
 	}
 	.middleButton2{
 		height:50px;
-		width: 40%;
+		width: 45%;
 		margin: 10px;
 		border: none;
 		background-color: #252839;

@@ -1,12 +1,12 @@
 <template>
-  <div class="back" :style="conTop">
+  <div class="back main" :style="conTop">
 	  <div>
 	      <img :src="imgSrc" width="100%" height="100%" alt="" />
 	  </div>
-	  <a-col type="flex" justify="space-around" align="middle">
+	  <a-col type="flex" justify="space-around" align="middle" class='main1'>
 	        <a-row :span="4">
 				<div>
-				    <img  src="../assets/test.png" height="100" width="100" alt="">
+				    <img  src="../assets/test.png" height="70" width="70" alt="">
 				</div>
 	        </a-row>
 	        <a-row :span="4">
@@ -42,6 +42,9 @@ export default {
 </script>
 
 <style scoped>
+	.main1{
+		margin-top: 30%;
+	}
 	.back{
 		width:100%;  
 		height:100%;  /**宽高100%是为了图片铺满屏幕 */
