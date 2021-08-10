@@ -19,7 +19,7 @@
 		  <steps></steps>
 		  <formA ref="mychild"></formA>
 	</a-row>
-	<div>
+	<div class='set-center'>
 		<button class="middleButton2" id="save" @click="disableAll">{{butName}}</button>
 		<button class="middleButton" id="mark" @click='$router.push({name:"floorPlan"})'>Mark as Completed</button>
 	</div>
@@ -116,6 +116,10 @@
 		border: none;
 		background-color: #252839;
 		color: #fafbff;
+	}
+	.set-center{
+		display: flex;
+		justify-content: center;
 	}
 
 </style>
