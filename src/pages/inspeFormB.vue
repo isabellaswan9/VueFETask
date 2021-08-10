@@ -7,7 +7,8 @@
 			<tab :isClickable='isClickable' @parentSubmit="formSubmit" :lastLev='lastLev'></tab>
 			<subTab :showHot='position' :isClickable='subTabClick'></subTab>
 		<!--通过path和query获取参数，也可以利用params接收参数-->
-		<p>{{this.$route.query.planName}}</p>	
+		<p  style="background: #eeeeee;padding: 20px;">{{this.$route.query.planName}}</p>
+			<roomList></roomList>
 		</a-spin>
 	</div>
 
@@ -15,12 +16,12 @@
 
 <script>
 	import loading from '../components/loading.vue'
-	
-	
+	import roomItem from '../components/roomItem.vue'
+	import roomList from '../components/roomList.vue'
 	export default{
 		name:'inspeFormB',
 		components:{
-			loading,
+			loading,roomItem,roomList
 		},
 		data(){
 			return {
@@ -30,7 +31,7 @@
 				position:-1,
 				spinning: false,
 				isReady: true,
-			}
+			};
 		},
 		methods: {
 			formSubmit(){
@@ -43,9 +44,12 @@
 					vm.spinning=false;
 					vm.isReady=true;
 					},3000)
-			}
-		}
-	};
+			},
+			
+			
+		},
+};
+
 </script>
 
 <style>
@@ -58,4 +62,5 @@
 	    z-index: 1000;
 	    background: rgba(0, 0, 0, 0.75);
 	  }
+	  
 </style>
