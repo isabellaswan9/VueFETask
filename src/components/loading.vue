@@ -1,7 +1,7 @@
 <template>
 	<div class="loading-backdrop">
 		<div class="loading-bg">
-			<img class="loading" src="http://img02.sogoucdn.com/app/a/200678/15053088147918.gif">
+			<img class="loading" src="../assets/loading.gif">
 			<p>Submitting</p>
 		</div>
 	</div>

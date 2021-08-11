@@ -7,6 +7,9 @@
 ``` bash
 # install dependencies
 npm install
+npm install babel-plugin-transform-vue-jsx --save-dev
+npm install babel-plugin-syntax-jsx --save-dev
+npm install babel-plugin-transform-runtime
 
 # serve with hot reload at localhost:8080
 npm run dev
